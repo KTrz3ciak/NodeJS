@@ -1,5 +1,0 @@
-dodawanie 1 + 2 = 3
-odejmowanie 2 - 1 = 1
-mnożenie 2 * 2 = 4
-dzielenie 4 / 2 = 2
-Pi = 3.14
