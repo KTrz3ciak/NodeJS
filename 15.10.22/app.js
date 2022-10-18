@@ -11,19 +11,17 @@ const mat = require('./math.js');
 const fs = require('fs');
 
 
-
-
 // Rozbudowanie kalkulatora o stałą matematyczną PI i wypisanie tejże wartości na konsoli w naszej głównej aplikacji.
 // console.log("Pi = " + mat.Pi);
 // Zapisanie wyniku działania z zadania 5 do pliku, wykorzystując moduł Core'owy File System (https://nodejs.org/dist/latest-v16.x/docs/api/fs.html , szukana funkcja ma przyrostek Sync).
 let data = "";
-    data += "dodawanie 1 + 2 = " + mat.add(1,2);
-    data += "\nodejmowanie 2 - 1 = " + mat.sub(2, 1);
-    data += "\nmnożenie 2 * 2 = " + mat.mul(2, 2);
-    data += "\ndzielenie 4 / 2 = " + mat.div(4, 2);
+    data += "dodawanie 1 + 2 = " + mat.add(6,3);
+    data += "\nodejmowanie 2 - 1 = " + mat.sub(6,3);
+    data += "\nmnożenie 2 * 2 = " + mat.mul(6,3);
+    data += "\ndzielenie 4 / 2 = " + mat.div(6,3);
     data += "\nPi = " + mat.Pi;
 
-fs.writeFileSync("data.txt", data);
+fs.writeFileSync("15.10.22/data.txt", data);
 // fs.appendFileSync("data.txt", data); dopisywanie tego samego tekstu
 
 // Aplikacja wyświetlająca informację o zalogowanym użytkowniku systemu, przy użyciu modułu OS (https://nodejs.org/dist/latest-v16.x/docs/api/os.html , szukana funkcja ma przyrostek Sync). Dodatkowo: zapis nazwy użytkownika do pliku na dysku.

@@ -1,4 +1,0 @@
-dodawanie 1 + 2 = [object Object][object Object]
-odejmowanie 2 - 1 = NaN
-mnożenie 2 * 2 = NaN
-dzielenie 4 / 2 = NaN

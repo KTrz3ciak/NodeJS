@@ -1,0 +1,4 @@
+dodawanie 10 + 2 = 102
+odejmowanie 10 - 2 = 8
+mnożenie 10 * 2 = 20
+dzielenie 10 / 2 = 5
