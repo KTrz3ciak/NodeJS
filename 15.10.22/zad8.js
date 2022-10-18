@@ -20,3 +20,13 @@ let wynik = "";
 
 fs.writeFileSync("15.10.22/wynik.txt", wynik);
 console.log(wynik);
+
+const input = process.argv[2];
+if (input == undefined)
+{
+    console.log("Hello World");
+}
+else
+{
+    console.log("Hello " + input);
+}
