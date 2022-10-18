@@ -8,11 +8,11 @@ const mat = require('./math.js')
 // const b = fs.readFileSync('./b.txt');
 const a = fs.readFileSync('15.10.22/a.txt','utf8');
 console.log(a);
-const b = fs.readFileSync('15.10.22/b.txt', 'utf8');
+const b = fs.readFileSync('15.10.22/b.txt','utf8');
 console.log(b);
 
 let wynik = "";
-    wynik += "dodawanie 10 + 2 = " + mat.add(a,b);
+    wynik += "dodawanie 10 + 2 = " + mat.add(parseInt(a),parseInt(b));
     wynik += "\nodejmowanie 10 - 2 = " + mat.sub(a,b);
     wynik += "\nmnożenie 10 * 2 = " + mat.mul(a,b);
     wynik += "\ndzielenie 10 / 2 = " + mat.div(a,b);

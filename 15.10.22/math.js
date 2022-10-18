@@ -1,7 +1,8 @@
 // podstawy tworzenia funkcji w js
 function add(a, b) {
     // dowolny kod js
-    return a + b;
+    const result = a + b;
+    return result;
 }
 
 function sub(a, b) {
