@@ -1,4 +1,4 @@
-dodawanie 10 + 2 = 35
-odejmowanie 10 - 2 = -5
-mnożenie 10 * 2 = 300
-dzielenie 10 / 2 = 0.75
+dodawanie 10 + 2 = 12
+odejmowanie 10 - 2 = 8
+mnożenie 10 * 2 = 20
+dzielenie 10 / 2 = 5
