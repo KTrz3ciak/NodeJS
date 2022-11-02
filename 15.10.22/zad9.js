@@ -1,5 +1,6 @@
 //
 const input = process.argv[2];
+
 if (input == undefined)
 {
     console.log("Hello World");

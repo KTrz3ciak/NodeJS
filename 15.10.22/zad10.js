@@ -6,16 +6,30 @@ const mat = require('./math.js')
 // let numberA = fs.readFileSync('a.txt');
 // const a = fs.readFileSync('./a.txt');
 // const b = fs.readFileSync('./b.txt');
-const a = fs.readFileSync('a.txt','utf8');
-console.log(a);
-const b = fs.readFileSync('b.txt','utf8');
-console.log(b);
+// Rozszerzenie aplikacji z zadania 8 tak, by nazwy plików z których pobieramy liczby były podawane w parametrach w czasie uruchamiania.
 
+
+
+//
+
+
+const a = process.argv[2];
+console.log("a wynosi: " + a);
+const b = process.argv[3];
+console.log("b wynosi: " + b);
+if (a == undefined)
+{
+    a = fs.readFileSync('a.txt','utf8');
+}
+else if(b == undefined)
+{
+   b = fs.readFileSync('b.txt','utf8');
+} 
 let wynik = "";
-    wynik += "dodawanie 10 + 2 = " + mat.add(parseInt(a),parseInt(b));
-    wynik += "\nodejmowanie 10 - 2 = " + mat.sub(a,b);
-    wynik += "\nmnożenie 10 * 2 = " + mat.mul(a,b);
-    wynik += "\ndzielenie 10 / 2 = " + mat.div(a,b);
+    wynik += "dodawanie a + b = " + mat.add(parseInt(a),parseInt(b));
+    wynik += "\nodejmowanie a - b = " + mat.sub(a,b);
+    wynik += "\nmnożenie a * b = " + mat.mul(a,b);
+    wynik += "\ndzielenie a / b = " + mat.div(a,b);
     
 
 fs.writeFileSync("wynik.txt", wynik);
