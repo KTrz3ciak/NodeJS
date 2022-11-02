@@ -1,4 +1,4 @@
-dodawanie a + b = 6
-odejmowanie a - b = 2
-mnożenie a * b = 8
-dzielenie a / b = 2
+dodawanie 10 + 2 = 12
+odejmowanie 10 - 2 = 8
+mnożenie 10 * 2 = 20
+dzielenie 10 / 2 = 5
