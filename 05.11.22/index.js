@@ -67,7 +67,7 @@
 // //8. Rozszerzenie aplikacji z zadania 7 o dynamiczne wprowadzanie danych które chcemy zapisać do pliku. Do wykorzystania zewnętrzny moduł yargs.
 // const yargs = require('yargs');
 // const fs = require('fs');
-// const parse = require('yargs-parser');
+// // const parse = require('yargs-parser');
 // const personalData = yargs.command({
 //     command: "data",
 //     describe: "Let me see your name and surname",
@@ -92,12 +92,12 @@
 //   if (err) {
 //     throw err
 //   }
-//   console.log('Well done we saved JSON file.')
+//   console.log('Error here');
 // })
 // 9. Dodanie do naszej aplikacji z zadania 8 odczytu danych przed nadpisaniem nowymi wartościami. W konsoli wypiszmy jedynie imię wczytanego użytkownika.
 const yargs = require('yargs');
 const fs = require('fs');
-const parse = require('yargs-parser');
+// const parse = require('yargs-parser');
 const parsedUser = fs.readFileSync('personalData.json', 'utf8',
     function(err, data) {
     if(err)
@@ -124,8 +124,12 @@ const personalData = yargs.command({
             }
         },
   handler(argv) {
-    console.log(`Welcome Mr|Mrs ${argv.name} ${argv.surName}`);
-  }
+    // if (argv.name === true && argv.surName === true) {
+      console.log(`Welcome Mr|Mrs ${argv.name} ${argv.surName}`);
+    // } else {
+    //   console.log(`Name here: ${argv.name}`);
+    // }
+  } 
       
 })
 // yargs.parse()
