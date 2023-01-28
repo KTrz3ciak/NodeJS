@@ -3,3 +3,9 @@
 var colors = require('colors');
 let napis = "BestNode";
 console.log(napis.rainbow);
+
+if (colors) {
+    colors.enable();
+} else {
+    colors.disable();
+}
