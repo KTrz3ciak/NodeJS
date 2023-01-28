@@ -9,3 +9,11 @@
 //  po zmianie nazwy app.js na app2.js
 //  > node app2.js //wyświetla szczegóły pliku app2.js
 //  Podpowiedź: jest to możliwe przy użyciu wbudowanych modułów Node.js.
+
+const fs = require("fs");
+
+function createdDate(file) {
+    const { whenCreated } = fs.statSync(file)
+    return whenCreated;
+}
+console(createdDate('/zad3.js'));
