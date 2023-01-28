@@ -12,8 +12,16 @@
 
 const fs = require("fs");
 
-function createdDate(file) {
-    const { whenCreated } = fs.statSync(file)
-    return whenCreated;
-}
-console(createdDate('/zad3.js'));
+// function createdDate(file) {
+//     const { whenCreated } = fs.statSync(file)
+//     return whenCreated;
+// }
+// console(createdDate('/zad3.js'));
+
+fs.stat("./zad3", (error, stats) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    console.log("File was created at: ", stats.birthtime.toUTCString());
+});
