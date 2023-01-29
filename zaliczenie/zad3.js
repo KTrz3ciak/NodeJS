@@ -26,4 +26,5 @@ fs.stat("./zad3.js", (error, stats) => {
     console.log("File was created at: ", stats.birthtime.toUTCString());
     console.log("File was last modify at: ", stats.mtime);
     console.log(`File size is equal:  ${stats.size} KB`);
+    
 });
