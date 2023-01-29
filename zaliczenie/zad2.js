@@ -5,7 +5,7 @@ const input = process.argv[2];
 console.log(input.rainbow);
 
 if (colors) {
-    colors.enable();
+    colors.enable(); // standardowo wyświetla sie ciąg znaków w kolorze lub za pomocą wyrażenia --color=true
 } else {
-    colors.disable();
+    colors.disable(); // po wpisaniu wyrażenia np - Node --color=false ciąg nie będzie tęczowy
 }

@@ -18,10 +18,12 @@ const fs = require("fs");
 // }
 // console(createdDate('/zad3.js'));
 
-fs.stat("./zad3", (error, stats) => {
+fs.stat("./zad3.js", (error, stats) => {
     if (error) {
         console.log(error);
         return;
     }
     console.log("File was created at: ", stats.birthtime.toUTCString());
+    console.log("File was last modify at: ", stats.mtime);
+    console.log(`File size is equal:  ${stats.size} KB`);
 });
