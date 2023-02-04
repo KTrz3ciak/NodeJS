@@ -8,22 +8,52 @@
 // }
 // Pamiętaj o obsłudze błędów. Żądania do API oraz zapis do pliku wykonuj asynchronicznie.
 
+const fs = require('fs');
 const argv = require('yargs').argv;
 const request = require('request');
 const ID = argv.id;
-const fileName = 'data.json';
+const URL = `http://numbersapi.com/${ID}`;
+const fileName = './data.json';
+const correctStatuCode = 200;
 
-const getInfoAboutNumber = (id, callback) => {
-    const URL = `http://numbersapi.com/${ID}`;
-    request(URL, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            const number = JSON.parse(body);
-            callback(number);
-        } else {
-            console.log('Number not found');
-        }
-    });
+if (argv.id == null || !Number.isInteger(argv.id) || argv.id < 0) {  // obsługa błędów w przypadku podania liczby
+    console.log('nieprawidłowy parametr');                          // równej 0 nie będącej liczbą całkowitą oraz mniejszą od 0
+    process.exit(0);
 }
-getInfoAboutNumber(ID, (number) => {
-    console.log(number);
-    });
+request(URL, (error, response, body) => {
+    if (!error && response.statusCode === correctStatuCode) {
+        let page = {
+            number: ID,
+            data: body,
+        }
+        let pageJSON = JSON.stringify(page);
+        // console.log(page);
+        fs.writeFileSync(fileName, pageJSON);
+    }
+    else {
+        console.log('User not found or network connection issues');
+    }
+})
+fs.readFile(fileName, 'utf-8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+})
+// const fileJSON = JSON.stringify(URL);
+
+
+// fs.writeFile('./data.json', fileJSON, (error) => {
+//     if (error) {
+//         console.log('błąd zapisu do pliku');
+//     } else {
+//         console.log('plik został zapisany');
+//     }
+// });
+
+// fs.readFile(fileName, 'utf-8', (error, data) => {
+//     if (error) {
+//         console.log('problem z odczytaniem pliku');
+//     } else {
+//         const dataFromFile = JSON.parse(data);
+//         console.log('Wczesniej odczytany plik', dataFromFile);
+//     }
+// });
