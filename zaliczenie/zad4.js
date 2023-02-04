@@ -13,9 +13,14 @@ const argv = require('yargs').argv;
 const request = require('request');
 const ID = argv.id;
 const URL = `http://numbersapi.com/${ID}`;
-const fileName = './data.json';
+const fileName = 'data.json';
+const fileNumber = 'fileWithData.json';
 const correctStatuCode = 200;
-
+const fileData = {
+    number: ID,
+    filename: fileNumber,
+}
+let fileDataJSON = JSON.stringify(fileData);
 if (argv.id == null || !Number.isInteger(argv.id) || argv.id < 0) {  // obsługa błędów w przypadku podania liczby
     console.log('nieprawidłowy parametr');                          // równej 0 nie będącej liczbą całkowitą oraz mniejszą od 0
     process.exit(0);
@@ -28,13 +33,18 @@ request(URL, (error, response, body) => {
         }
         let pageJSON = JSON.stringify(page);
         // console.log(page);
-        fs.writeFileSync(fileName, pageJSON);
+        fs.writeFileSync(fileNumber, pageJSON);
     }
     else {
         console.log('User not found or network connection issues');
     }
 })
+fs.writeFileSync(fileName, fileDataJSON);
 fs.readFile(fileName, 'utf-8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+})
+fs.readFile(fileNumber, 'utf-8', (err, data) => {
     if (err) throw err;
     console.log(data);
 })
